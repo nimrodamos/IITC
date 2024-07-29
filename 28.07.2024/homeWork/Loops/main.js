@@ -102,4 +102,4 @@
 //   else console.log("you guess the cuorret number");
 // } while (guess !== secretNumber);
 
-//12.
+// 12.
