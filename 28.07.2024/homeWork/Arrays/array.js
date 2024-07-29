@@ -96,3 +96,28 @@ do {
   let removedElement = arrayNumbers.pop();
   console.log(removedElement);
 } while (arrayNumbers.length > 0);
+
+//26.
+fruits.unshift("mango");
+console.log(fruits);
+
+//27.
+console.log(numbers); // 1,2,6,4
+let removedElement2 = numbers.shift();
+console.log("removed number " + [removedElement2]);
+console.log(numbers);
+
+//28.
+numbers.unshift(5, 7, 8);
+console.log(numbers);
+
+//29.
+//not work with unshift()
+
+//30.
+let arrayToEmpty = [10, 20, 30, 40, 50];
+
+while (arrayToEmpty.length > 0) {
+  let removedElement = arrayToEmpty.shift();
+  console.log(removedElement);
+}
