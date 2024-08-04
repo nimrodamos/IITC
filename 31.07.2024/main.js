@@ -89,5 +89,5 @@ person.printDetailsOfPerson();
 
 //8.
 
-let keysOfPerson = Object.keys(person);
-console.log(keysOfPerson);
+// let keysOfPerson = Object.keys(person);
+// console.log(keysOfPerson);
