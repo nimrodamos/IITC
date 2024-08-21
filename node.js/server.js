@@ -41,10 +41,16 @@ app.get("/api/products", (req, res) => {
 // Dynamic route for product details
 app.get("/api/products/:id", (req, res) => {
   const productId = parseInt(req.params.id, 10);
+  let product = null;
 
-  // Find the product with the matching ID
-  const product = products.find((p) => p.id === productId);
+  // Loop through the products to find the one with the matching ID
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].id === productId) {
+      product = products[i];
+    }
+  }
 
+  // Send the product or a 404 response if not found
   if (product) {
     res.json(product);
   } else {
