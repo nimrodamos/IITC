@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Positions</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: blueviolet;
+        padding: 8px;
+        padding-bottom: 84px;
+        color: white;
+        letter-spacing: 2px;
+        font-family: monospace;
+        position: static;
+        top: 0;
+        z-index: 9999;
+      }
+
+      footer {
+        background-color: blueviolet;
+        color: wheat;
+        padding: 17px;
+        position: fixed;
+        bottom: 0;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+      }
+
+      .relative {
+        position: relative;
+        top: 20px;
+        left: 40px;
+      }
+
+      .absolute {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .sticky {
+        top: 20px;
+        bottom: 0;
+        position: sticky;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Hello Position 🙋🏻‍♀️</h1>
+      <div class="box absolute">absolute (relative to the header)</div>
+    </header>
+    <main>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eligendi
+        magnam hic nam facilis nulla saepe mollitia natus consequuntur
+        accusantium?
+      </p>
+      <div class="box relative">Relative</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <div class="box absolute">absolute (relative to the viewport)</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adpisicing elit. Iusto, ipsa!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <div class="box sticky">Sticky Yki</div>
+      <p>
+        Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Esse qui harum possimus, ipsum voluptates ab maiores
+        nobis, perferendis, suscipit consequuntur eum ratione quisquam similique
+        aspernatur cumque ducimus omnis dignissimos. Nisi sint reprehenderit
+        perferendis perspiciatis voluptate, corporis aut dolorum suscipit
+        architecto labore cumque facere natus, pariatur a ad placeat laboriosam
+        ratione. amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <p>
+        Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Esse qui harum possimus, ipsum voluptates ab maiores
+        nobis, perferendis, suscipit consequuntur eum ratione quisquam similique
+        aspernatur cumque ducimus omnis dignissimos. Nisi sint reprehenderit
+        perferendis perspiciatis voluptate, corporis aut dolorum suscipit
+        architecto labore cumque facere natus, pariatur a ad placeat laboriosam
+        ratione. amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+      <p>
+        Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Esse qui harum possimus, ipsum voluptates ab maiores
+        nobis, perferendis, suscipit consequuntur eum ratione quisquam similique
+        aspernatur cumque ducimus omnis dignissimos. Nisi sint reprehenderit
+        perferendis perspiciatis voluptate, corporis aut dolorum suscipit
+        architecto labore cumque facere natus, pariatur a ad placeat laboriosam
+        ratione. amet consectetur, adipisicing elit. Iusto, ipsa!
+      </p>
+    </main>
+    <footer>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum possimus
+      arum sint error quam. Expedita, tenetur?
+    </footer>
+  </body>
+</html>

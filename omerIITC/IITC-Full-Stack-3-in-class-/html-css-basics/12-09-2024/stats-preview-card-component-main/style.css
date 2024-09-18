@@ -1,0 +1,147 @@
+@import "/css/fonts.css";
+@import "/css/variables.css";
+@import "/css/reset.css";
+
+/* Custom Styles */
+article {
+  background-color: var(--color-bg-800);
+  color: var(--color-neutral-100);
+  max-width: 320px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-inline: 1rem;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-overlay {
+  background-color: var(--color-priamry-500);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.desktop-img {
+  display: none;
+}
+
+.mobile-img {
+  display: block;
+}
+
+.article-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.article-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-neutral-50);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.article-title > span {
+  color: var(--color-priamry-400);
+}
+
+p {
+  margin-bottom: 2.825rem;
+  line-height: 1.7;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stats > div > div:first-child {
+  color: var(--color-neutral-50);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stats > div > div:last-child {
+  color: var(--color-neutral-150);
+  text-transform: uppercase;
+  font-family: deca;
+  letter-spacing: 1px;
+  font-size: 0.825rem;
+}
+
+.stats > div:last-child > div:first-child {
+  text-transform: uppercase;
+}
+
+@media (min-width: 840px) {
+  article {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1155px;
+  }
+
+  article > * {
+    flex: 1;
+  }
+
+  .article-content {
+    padding: 4rem;
+    padding-right: 6.1rem;
+    text-align: start;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .article-title {
+    font-size: 2.2rem;
+    margin-top: 0;
+  }
+
+  .article-content p {
+    /* margin-top: 1.5rem;
+    margin-bottom: 5rem; */
+    padding-right: 4rem;
+    margin: 0;
+  }
+
+  .stats {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .desktop-img {
+    display: block;
+  }
+  .mobile-img {
+    display: none;
+  }
+}
+
+/* .stats > div > div:not(.baba):first-child {
+  color: red;
+}
+
+.stats > div > div:last-child {
+  color: green;
+}
+
+.stats > div:nth-child(2) {
+  background-color: var(--color-priamry-400);
+} */

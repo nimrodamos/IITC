@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-basis: 85vh;
+}
+
+header,
+nav,
+article,
+aside,
+footer {
+  padding: 0.5em;
+  flex-grow: 1;
+}
+
+header {
+  background-color: blueviolet;
+  text-align: center;
+}
+
+nav {
+  background-color: lightblue;
+}
+
+article {
+  background-color: lightgreen;
+}
+
+aside {
+  background-color: lightcoral;
+}
+
+footer {
+  background-color: darkslategray;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    flex-direction: column;
+  }
+
+  article {
+    order: -1;
+  }
+}

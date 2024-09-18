@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Specificity</title>
+    <style>
+      .omer {
+        color: red !important;
+        font-size: 12px;
+        background-color: rebeccapurple;
+      }
+
+      #special {
+        color: black;
+      }
+
+      .highlight.baba {
+        color: yellow;
+      }
+
+      .container p {
+        color: blueviolet;
+      }
+
+      .highlight {
+        color: red;
+        background-color: aqua;
+      }
+
+      p {
+        color: yellowgreen;
+        border: 2px dotted black;
+        padding: 1rem;
+      }
+
+      p {
+        color: black;
+      }
+
+      .container {
+        border: 4px solid black;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="baba">Specificity Example</h1>
+    <p>1st tag selector (p).</p>
+    <p class="highlight">1st class selector (.highlight).</p>
+    <p class="highlight baba">2nd class selector (.highlight & baba).</p>
+    <p class="baba">3nd class selector (baba).</p>
+    <p
+      id="special"
+      class="highlight omer"
+      style="color: brown"
+    >
+      id selector (#special).
+    </p>
+
+    <div class="container">
+      <p class="highlight baba">2nd tag selector (p).</p>
+      <p>3nd tag selector (p).</p>
+    </div>
+  </body>
+</html>

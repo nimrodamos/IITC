@@ -1,0 +1,58 @@
+/* General CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+
+main {
+  padding-inline: 1rem;
+  margin-top: 1rem;
+}
+
+article {
+  background-color: blueviolet;
+  padding: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ///////////////////////////////////////////// */
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Even columns */
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.even-columns {
+  flex: 1;
+}

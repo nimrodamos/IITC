@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Media Query</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        padding: 24px;
+        background-color: rebeccapurple;
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+      }
+
+      p {
+        padding: 24px;
+        text-align: center;
+      }
+
+      @media (min-width: 640px) {
+        h1 {
+          text-align: start;
+          font-size: 4rem;
+          padding: 36px;
+        }
+
+        p {
+          text-align: start;
+          font-size: 1.5rem;
+          padding: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello Media Query</h1>
+
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis adipisci
+      expedita molestiae asperiores autem, ut quidem commodi odio quae
+      consequatur soluta voluptatem id vitae quas necessitatibus distinctio sint
+      alias atque.
+    </p>
+  </body>
+</html>

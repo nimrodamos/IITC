@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Cascading</title>
+    <style>
+      /* Tag selector */
+      p {
+        color: yellowgreen;
+        border: 2px dotted black;
+        padding: 1rem;
+      }
+
+      p {
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Cascading Example</h1>
+    <p>1st tag selector (p).</p>
+    <p class="highlight">1st class selector (.highlight).</p>
+    <p class="highlight">2nd class selector (.highlight).</p>
+    <p id="special">id selector (#special).</p>
+    <p>2nd tag selector (p).</p>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+footer {
+  background-color: var(--brand-color);
+  color: white;
+  padding-block: 24px;
+}
+
+.footer-content {
+  padding-inline: var(--page-padding);
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Display</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .example-container {
+        margin-top: 16px;
+        outline: 5px solid red;
+        padding: 8px;
+
+        height: 80px;
+        overflow: scroll;
+      }
+
+      button {
+        margin-right: 16px;
+        margin-top: 100px;
+
+        padding-block: 12px;
+        padding-inline: 32px;
+
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+        background-color: hsl(276, 86%, 57%);
+        color: white;
+        border-radius: 16px;
+
+        transition: 300ms cubic-bezier(0, 1.51, 0.89, -0.66);
+      }
+
+      button:hover {
+        background-color: hsl(276, 86%, 70%);
+        border-radius: 1px;
+        transition: 1s cubic-bezier(0, 1.51, 0.89, -0.66);
+      }
+
+      span {
+        color: #ff0000;
+        margin-top: 100px;
+        height: 40px;
+      }
+
+      .baba {
+        margin-top: 16px;
+        background-color: pink;
+        width: 150px;
+        height: 150px;
+      }
+
+      .center {
+        width: 25px;
+        height: 25px;
+        background-color: red;
+        margin-inline: auto;
+        margin-block: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Im a block element!</h1>
+    <p>Im also <span>(not me, im inline)</span> a block element!</p>
+    <div>im too a block element</div>
+
+    <div>
+      <button>inline-block 1</button>
+      <button>inline-block 2</button>
+      <button>inline-block 3</button>
+    </div>
+
+    <div>
+      <button>inline-block</button>
+      <button>inline-block</button>
+      <button>inline-block</button>
+    </div>
+
+    <div class="example-container">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
+        repellendus quam corrupti aspernatur praesentium reiciendis aliquid amet
+        laboriosam non, similique, iure sunt deleniti harum aut fugiat magni?
+        Adipisci ipsa quam commodi sint nulla nihil vitae, doloribus totam
+        obcaecati facilis sit atque et! Deleniti nobis rem aperiam quisquam eius
+        nisi cupiditate!
+      </p>
+    </div>
+
+    <p class="hidden">Im hiding from you!</p>
+
+    <div class="baba">
+      <div class="center"></div>
+    </div>
+  </body>
+</html>

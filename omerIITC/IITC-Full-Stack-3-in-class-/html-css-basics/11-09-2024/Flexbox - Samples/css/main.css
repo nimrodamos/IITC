@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(118, 137, 149);
+  padding: 3rem;
+  font-family: sans-serif;
+}
+
+.flex-container {
+  height: 60vh;
+  background-color: rgb(211, 211, 171);
+  border: black solid 2px;
+  display: flex;
+
+  /* gap: 16px; */
+  /* flex-wrap: wrap; */
+
+  /* FLEX DIRECTION */
+  /* DEFAULT - row */
+  flex-direction: row;
+  /* flex-direction: column; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column-reverse; */
+
+  /* JUSTIFY CONTENT */
+  /* Main Axis */
+  /* DEFAULT - flex-start */
+  justify-content: flex-start;
+  /* justify-content: flex-end; */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+
+  /* ALIGN ITEMS */
+  /* Cross Axis */
+  /* DEFAULT - stretch */
+  align-items: stretch;
+  /* align-items: flex-start; */
+  /* align-items: flex-end; */
+  /* align-items: center; */
+}
+
+.flex-item {
+  padding: 16px;
+}
+
+.flex-item1 {
+  /* flex-grow: 2; */
+  background-color: red;
+}
+
+.flex-item2 {
+  /* align-self: flex-end; */
+  background-color: orange;
+}
+
+.flex-item3 {
+  /* flex-basis: 200px; */
+  background-color: yellow;
+}
+
+.flex-item4 {
+  /* flex-grow: 1; */
+  background-color: green;
+}
+
+.flex-item5 {
+  background-color: blue;
+}

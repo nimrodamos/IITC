@@ -1,0 +1,23 @@
+.logo a {
+  text-transform: uppercase;
+  color: var(--brand-color);
+  font-weight: 700;
+}
+
+nav {
+  /* --brand-color: black; */
+  border-bottom: 1px solid var(--brand-color);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: var(--page-padding);
+  padding-block: 16px;
+}
+
+nav ul {
+  display: flex;
+  gap: 16px;
+}
+
+nav ul a {
+  color: var(--brand-color);
+}

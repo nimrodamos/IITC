@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Selectors</title>
+    <style>
+      /* Tag selector */
+      p {
+        color: goldenrod;
+        border: 2px dotted black;
+        padding: 16px;
+      }
+
+      /* Class selector */
+      .highlight {
+        color: red;
+        background-color: gray;
+      }
+
+      /* ID selector */
+      #special {
+        color: purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Selector Example</h1>
+    <p>1st tag selector (p).</p>
+    <p class="highlight">1st class selector (.highlight).</p>
+    <p class="highlight">2nd class selector (.highlight).</p>
+    <p
+      id="special"
+      class="highlight"
+    >
+      id selector (#special).
+    </p>
+    <p>2nd tag selector (p).</p>
+  </body>
+</html>
