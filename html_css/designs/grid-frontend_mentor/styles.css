@@ -1,0 +1,95 @@
+body {
+}
+.main {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 20px;
+  background-color: hsl(210, 46%, 95%);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  color: hsl(0, 0%, 100%);
+}
+.review {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 2px 5px #0000001a;
+}
+.theHead {
+  display: flex;
+  align-items: center; /* מAlign את התמונה והכותרת במרכז */
+}
+h3 {
+  margin: 0;
+}
+.review-img {
+  width: 35px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 15px; /* רווח בין התמונה לכותרת */
+}
+
+.verified {
+  display: block; /* הפוך את ה-span לשורה חדשה */
+  color: hsl(0, 0%, 100%);
+  opacity: 0.2; /* שקיפות של 50% */
+  font-size: 0.8em;
+}
+
+.paragraph {
+  font-size: 2em;
+  font-weight: bold;
+}
+.paragraph2 {
+  font-size: 1.1em;
+  opacity: 0.5; /* שקיפות של 50% */
+}
+.Daniel {
+  background-color: hsl(263, 55%, 52%);
+  color: hsl(0, 0%, 100%);
+}
+.Jonathan {
+  background-color: hsl(217, 19%, 35%);
+}
+.Jeanette {
+  color: hsl(217, 19%, 35%);
+}
+.Jeanette .verified {
+  color: hsl(217, 19%, 35%);
+}
+.Patrick {
+  background-color: hsl(219, 29%, 14%);
+}
+.Kira {
+  color: hsl(217, 19%, 35%);
+}
+.Kira .verified {
+  color: hsl(217, 19%, 35%);
+}
+@media (min-width: 1240px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .Daniel {
+    grid-column: 1 / span 2; /* תופס 2 עמודות מצד שמאל */
+    grid-row: 1; /* בשורה הראשונה */
+  }
+
+  .Kira {
+    grid-column: 4; /* עמודה 4 (העמודה האחרונה מימין) */
+    grid-row: 1 / span 2; /* תופס את השורה הראשונה והשנייה */
+  }
+
+  .Patrick {
+    grid-column: 2 / span 2; /* תופס את 2 העמודות האמצעיות */
+    grid-row: 2; /* בשורה השנייה */
+  }
+}
