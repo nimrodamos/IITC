@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employee Management</h1>
+
+      <!-- Form to add a new employee -->
+      <form id="employee-form">
+        <input id="first-name" type="text" placeholder="First Name" required />
+        <input id="last-name" type="text" placeholder="Last Name" required />
+        <input id="age" type="number" placeholder="Age" required />
+        <input id="start-date" type="date" placeholder="Start Date" required />
+        <input id="department" type="text" placeholder="Department" required />
+        <input id="salary" type="number" placeholder="Salary" required />
+        <button type="submit">Add Employee</button>
+      </form>
+
+      <!-- Filter options for employees -->
+      <div id="filter-buttons">
+        <input
+          type="text"
+          id="department-filter"
+          placeholder="Filter by Department"
+        />
+        <button id="filter-button">Filter</button>
+      </div>
+
+      <!-- List of Employees -->
+      <ul id="employee-list">
+        <!-- Employees will be rendered here -->
+      </ul>
+
+      <script type="module" src="controller.js"></script>
+    </div>
+  </body>
+</html>
