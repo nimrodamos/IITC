@@ -2,6 +2,82 @@
 
 import { makeId } from "./utils.js";
 
+// Function to initialize sample employees
+function initializeEmployees() {
+  const employees = getEmployeesFromLocalStorage();
+  if (employees.length === 0) {
+    const sampleEmployees = [
+      {
+        firstName: "Alice",
+        lastName: "Smith",
+        age: 28,
+        startDate: "2020-06-15",
+        department: "Marketing",
+        salary: 50000,
+        id: makeId(), // Make sure to create a unique ID
+      },
+      {
+        firstName: "John",
+        lastName: "Doe",
+        age: 35,
+        startDate: "2018-01-25",
+        department: "Sales",
+        salary: 60000,
+        id: makeId(),
+      },
+      {
+        firstName: "Emma",
+        lastName: "Johnson",
+        age: 42,
+        startDate: "2015-03-12",
+        department: "IT",
+        salary: 70000,
+        id: makeId(),
+      },
+      {
+        firstName: "Michael",
+        lastName: "Brown",
+        age: 30,
+        startDate: "2019-07-01",
+        department: "Finance",
+        salary: 55000,
+        id: makeId(),
+      },
+      {
+        firstName: "Sophia",
+        lastName: "Williams",
+        age: 26,
+        startDate: "2021-05-20",
+        department: "HR",
+        salary: 45000,
+        id: makeId(),
+      },
+      {
+        firstName: "David",
+        lastName: "Taylor",
+        age: 39,
+        startDate: "2017-09-14",
+        department: "Operations",
+        salary: 64000,
+        id: makeId(),
+      },
+      {
+        firstName: "Laura",
+        lastName: "White",
+        age: 32,
+        startDate: "2016-11-03",
+        department: "Logistics",
+        salary: 50000,
+        id: makeId(),
+      },
+    ];
+    localStorage.setItem("employees", JSON.stringify(sampleEmployees));
+  }
+}
+
+// Call the initialize function when the application loads
+initializeEmployees();
+
 // Function to get employees from localStorage
 function getEmployeesFromLocalStorage() {
   const employees = localStorage.getItem("employees");
@@ -34,7 +110,7 @@ function deleteEmployee(id) {
   const employees = getEmployeesFromLocalStorage();
   const updatedEmployees = employees.filter((emp) => emp.id !== id);
   localStorage.setItem("employees", JSON.stringify(updatedEmployees));
-  displayEmployees(); // Display updated employees
+  renderEmployees(); // Display updated employees
 }
 
 // Function to edit an employee by ID
@@ -56,7 +132,7 @@ function editEmployee(id) {
 }
 
 // Function to display employees in the table
-function displayEmployees() {
+function renderEmployees() {
   const employees = getEmployeesFromLocalStorage();
   const employeeTableBody = document.querySelector("#employeeTable tbody");
   employeeTableBody.innerHTML = ""; // Clear previous content
@@ -80,4 +156,11 @@ function displayEmployees() {
   });
 }
 
-export { addEmployee, deleteEmployee, editEmployee, displayEmployees };
+export {
+  addEmployee,
+  deleteEmployee,
+  editEmployee,
+  renderEmployees,
+  getEmployeesFromLocalStorage,
+  initializeEmployees,
+};

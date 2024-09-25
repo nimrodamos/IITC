@@ -4,8 +4,12 @@ import {
   addEmployee,
   deleteEmployee,
   editEmployee,
-  displayEmployees,
+  renderEmployees,
+  getEmployeesFromLocalStorage,
+  initializeEmployees,
 } from "./employee.service.js";
+
+initializeEmployees();
 
 // Function to handle form submission
 document.getElementById("addEmployeeForm").addEventListener("submit", (e) => {
@@ -19,7 +23,7 @@ document.getElementById("addEmployeeForm").addEventListener("submit", (e) => {
     salary: parseFloat(document.getElementById("salary").value),
   };
   addEmployee(newEmployee);
-  displayEmployees(); // Display updated employees
+  renderEmployees(); // Display updated employees
   e.target.reset(); // Reset the form
 });
 
@@ -48,6 +52,6 @@ function setupEventListeners() {
 
 // Display employees when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-  displayEmployees();
+  renderEmployees();
   setupEventListeners(); // Setup event listeners for buttons
 });
