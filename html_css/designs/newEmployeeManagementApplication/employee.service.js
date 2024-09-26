@@ -111,6 +111,7 @@ function deleteEmployee(id) {
   const updatedEmployees = employees.filter((emp) => emp.id !== id);
   localStorage.setItem("employees", JSON.stringify(updatedEmployees));
   renderEmployees(); // Display updated employees
+  setupEventListeners(); // Re-setup event listeners for buttons
 }
 
 // Function to edit an employee by ID
@@ -128,10 +129,38 @@ function editEmployee(id) {
 
     // Store the ID of the employee being edited
     document.getElementById("editIndex").value = employee.id;
+
+    // Call renderEmployees to update the table view
+    renderEmployees();
+    setupEventListeners(); // Re-setup event listeners for buttons
   }
 }
+// Function to set up event listeners for edit and delete buttons
+function setupEventListeners() {
+  const employees = getEmployeesFromLocalStorage();
+  const employeeTableBody = document.querySelector("#employeeTable tbody");
 
-// Function to display employees in the table
+  // Clear existing event listeners by recreating the buttons
+  employees.forEach((employee) => {
+    const row = employeeTableBody.querySelector(`tr[data-id="${employee.id}"]`);
+
+    if (row) {
+      const editButton = row.querySelector("button.edit");
+      const deleteButton = row.querySelector("button.delete");
+
+      // Clear previous listeners (if needed) and add new listeners
+      if (editButton) {
+        editButton.onclick = () => editEmployee(employee.id);
+      }
+
+      if (deleteButton) {
+        deleteButton.onclick = () => deleteEmployee(employee.id);
+      }
+    }
+  });
+}
+
+// Function to render employees in the table
 function renderEmployees() {
   const employees = getEmployeesFromLocalStorage();
   const employeeTableBody = document.querySelector("#employeeTable tbody");
@@ -139,21 +168,25 @@ function renderEmployees() {
 
   employees.forEach((employee) => {
     const row = document.createElement("tr");
+    row.setAttribute("data-id", employee.id); // Set data-id for reference
     row.innerHTML = `
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.age}</td>
-            <td>${employee.startDate}</td>
-            <td>${employee.department}</td>
-            <td>${employee.salary}</td>
-            <td>${employee.id}</td> <!-- Displaying the unique ID -->
-            <td>
-                <button class="edit" data-id="${employee.id}">Edit</button>
-                <button class="delete" data-id="${employee.id}">Delete</button>
-            </td>
-        `;
+              <td>${employee.firstName}</td>
+              <td>${employee.lastName}</td>
+              <td>${employee.age}</td>
+              <td>${employee.startDate}</td>
+              <td>${employee.department}</td>
+              <td>${employee.salary}</td>
+              <td>${employee.id}</td> <!-- Displaying the unique ID -->
+              <td>
+                  <button class="edit" data-id="${employee.id}">Edit</button>
+                  <button class="delete" data-id="${employee.id}">Delete</button>
+              </td>
+          `;
     employeeTableBody.appendChild(row);
   });
+
+  // After rendering employees, re-setup event listeners
+  setupEventListeners();
 }
 
 export {
@@ -163,4 +196,5 @@ export {
   renderEmployees,
   getEmployeesFromLocalStorage,
   initializeEmployees,
+  setupEventListeners,
 };

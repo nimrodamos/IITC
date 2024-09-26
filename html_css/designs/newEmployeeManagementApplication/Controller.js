@@ -7,6 +7,7 @@ import {
   renderEmployees,
   getEmployeesFromLocalStorage,
   initializeEmployees,
+  setupEventListeners,
 } from "./employee.service.js";
 
 initializeEmployees();
@@ -26,29 +27,6 @@ document.getElementById("addEmployeeForm").addEventListener("submit", (e) => {
   renderEmployees(); // Display updated employees
   e.target.reset(); // Reset the form
 });
-
-// Function to set up event listeners for edit and delete buttons
-function setupEventListeners() {
-  const employees = getEmployeesFromLocalStorage();
-  const employeeTableBody = document.querySelector("#employeeTable tbody");
-
-  employees.forEach((employee) => {
-    const editButton = employeeTableBody.querySelector(
-      `button[data-id="${employee.id}"].edit`
-    );
-    const deleteButton = employeeTableBody.querySelector(
-      `button[data-id="${employee.id}"].delete`
-    );
-
-    if (editButton) {
-      editButton.addEventListener("click", () => editEmployee(employee.id));
-    }
-
-    if (deleteButton) {
-      deleteButton.addEventListener("click", () => deleteEmployee(employee.id));
-    }
-  });
-}
 
 // Display employees when the page loads
 document.addEventListener("DOMContentLoaded", () => {
