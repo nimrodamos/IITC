@@ -14,7 +14,7 @@ function initializeEmployees() {
         startDate: "2020-06-15",
         department: "Marketing",
         salary: 50000,
-        id: makeId(), // Make sure to create a unique ID
+        id: makeId(),
       },
       {
         firstName: "John",

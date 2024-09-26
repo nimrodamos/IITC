@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Management Application</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Link to CSS file -->
   </head>
   <body>
     <div class="container">
@@ -17,7 +16,19 @@
         <input type="text" id="lastName" placeholder="Last Name" required />
         <input type="number" id="age" placeholder="Age" required />
         <input type="date" id="startDate" required />
-        <input type="text" id="department" placeholder="Department" required />
+
+        <!-- תיבת בחירה עבור המחלקות -->
+        <select id="department" required>
+          <option value="" disabled selected>Select a department</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Sales">Sales</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+          <option value="HR">HR</option>
+          <option value="Operations">Operations</option>
+          <option value="Logistics">Logistics</option>
+        </select>
+
         <input type="number" id="salary" placeholder="Salary" required />
         <button type="submit">Add Employee</button>
         <input type="hidden" id="editIndex" value="" />
@@ -44,7 +55,5 @@
     </div>
 
     <script type="module" src="Controller.js"></script>
-
-    <!-- Link to JavaScript file -->
   </body>
 </html>
