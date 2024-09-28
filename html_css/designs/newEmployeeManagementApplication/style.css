@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4; /* אפשר לשקול צבע כהה יותר */
+  background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
 }
@@ -11,19 +11,19 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* צל עדין יותר */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1,
 h2 {
   padding: 10px;
-  background-color: #007bff; /* צבע חדש */
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  text-align: center; /* מרכז את הטקסט */
+  text-align: center;
 }
 
 button {
@@ -37,8 +37,8 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3; /* צבע בעת ריחוף */
-  transform: translateY(-2px); /* הנפשה קטנה */
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 button:active {
@@ -48,9 +48,9 @@ button:active {
 table {
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid #007bff; /* גבול מסביב לטבלה */
-  border-radius: 8px; /* רדיוס פינות */
-  overflow: hidden; /* להחביא את הפינות המוגזמות */
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 th,
@@ -66,25 +66,25 @@ td:nth-child(7) {
 }
 
 th {
-  background-color: #007bff; /* צבע חדש לכותרות */
+  background-color: #007bff;
   color: white;
 }
 tr:hover {
-  background-color: #f1f1f1; /* אפקט hover לשורות */
+  background-color: #f1f1f1;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9; /* צבע רקע לשורות זוגיות */
+  background-color: #f9f9f9;
 }
 
 form {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  background: #fff; /* רקע לטופס */
+  background: #fff;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל עדין */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"],
@@ -95,12 +95,11 @@ select {
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  transition: border 0.3s; /* אפקט מעבר */
+  transition: border 0.3s;
 }
-
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
 select:focus {
-  border-color: #28a745; /* צבע כאשר יש פוקוס */
+  border-color: #28a745;
 }
