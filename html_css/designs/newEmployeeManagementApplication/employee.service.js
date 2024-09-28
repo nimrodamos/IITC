@@ -97,6 +97,7 @@ function addEmployee(employee) {
       localStorage.setItem("employees", JSON.stringify(employees));
     }
     document.getElementById("editIndex").value = ""; // Reset edit index
+    resetButtonText();
   } else {
     // Add new employee with a new ID
     employee.id = makeId(); // Create a unique ID for new employee
@@ -107,11 +108,12 @@ function addEmployee(employee) {
 
 // Function to delete an employee by ID
 function deleteEmployee(id) {
-  const employees = getEmployeesFromLocalStorage();
-  const updatedEmployees = employees.filter((emp) => emp.id !== id);
-  localStorage.setItem("employees", JSON.stringify(updatedEmployees));
-  renderEmployees(); // Display updated employees
-  setupEventListeners(); // Re-setup event listeners for buttons
+  if (confirm("Are you sure you want to delete this employee?")) {
+    const employees = getEmployeesFromLocalStorage();
+    const updatedEmployees = employees.filter((emp) => emp.id !== id);
+    localStorage.setItem("employees", JSON.stringify(updatedEmployees));
+    renderEmployees(); // Display updated employees
+  }
 }
 
 // Function to edit an employee by ID
@@ -130,11 +132,23 @@ function editEmployee(id) {
     // Store the ID of the employee being edited
     document.getElementById("editIndex").value = employee.id;
 
+    if (editIndex) {
+      document.querySelector("button[type='submit']").textContent =
+        "Update Employee";
+    } else {
+      document.querySelector("button[type='submit']").textContent =
+        "Add Employee";
+    }
+
     // Call renderEmployees to update the table view
     renderEmployees();
-    setupEventListeners(); // Re-setup event listeners for buttons
   }
 }
+// Function to reset button text to "Add Employee"
+function resetButtonText() {
+  document.querySelector("button[type='submit']").textContent = "Add Employee";
+}
+
 // Function to set up event listeners for edit and delete buttons
 function setupEventListeners() {
   const employees = getEmployeesFromLocalStorage();
@@ -158,6 +172,49 @@ function setupEventListeners() {
       }
     }
   });
+}
+// Function to filter employees by department
+function filterEmployeesByDepartment(department) {
+  const employees = getEmployeesFromLocalStorage();
+  let filteredEmployees;
+
+  if (department === "All") {
+    filteredEmployees = employees; // Show all employees if "All" is selected
+  } else {
+    filteredEmployees = employees.filter(
+      (employee) => employee.department === department
+    );
+  }
+
+  renderFilteredEmployees(filteredEmployees);
+}
+
+// Function to render filtered employees in the table
+function renderFilteredEmployees(filteredEmployees) {
+  const employeeTableBody = document.querySelector("#employeeTable tbody");
+  employeeTableBody.innerHTML = ""; // Clear previous content
+
+  filteredEmployees.forEach((employee) => {
+    const row = document.createElement("tr");
+    row.setAttribute("data-id", employee.id); // Set data-id for reference
+    row.innerHTML = `
+              <td>${employee.firstName}</td>
+              <td>${employee.lastName}</td>
+              <td>${employee.age}</td>
+              <td>${employee.startDate}</td>
+              <td>${employee.department}</td>
+              <td>${employee.salary}</td>
+              <td>${employee.id}</td> <!-- Displaying the unique ID -->
+              <td>
+                  <button class="edit" data-id="${employee.id}">Edit</button>
+                  <button class="delete" data-id="${employee.id}">Delete</button>
+              </td>
+          `;
+    employeeTableBody.appendChild(row);
+  });
+
+  // After rendering filtered employees, re-setup event listeners
+  setupEventListeners();
 }
 
 // Function to render employees in the table
@@ -197,4 +254,5 @@ export {
   getEmployeesFromLocalStorage,
   initializeEmployees,
   setupEventListeners,
+  filterEmployeesByDepartment,
 };

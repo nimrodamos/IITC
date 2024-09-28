@@ -8,6 +8,7 @@ import {
   getEmployeesFromLocalStorage,
   initializeEmployees,
   setupEventListeners,
+  filterEmployeesByDepartment,
 } from "./employee.service.js";
 
 initializeEmployees();
@@ -28,8 +29,13 @@ document.getElementById("addEmployeeForm").addEventListener("submit", (e) => {
   e.target.reset(); // Reset the form
 });
 
+// Event listener for department filter
+document.getElementById("departmentFilter").addEventListener("change", (e) => {
+  const selectedDepartment = e.target.value;
+  filterEmployeesByDepartment(selectedDepartment);
+});
+
 // Display employees when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   renderEmployees();
-  setupEventListeners(); // Setup event listeners for buttons
 });

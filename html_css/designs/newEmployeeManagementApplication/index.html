@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Management Application</title>
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -33,6 +34,20 @@
         <button type="submit">Add Employee</button>
         <input type="hidden" id="editIndex" value="" />
       </form>
+
+      <div id="filter-department">
+        <label for="departmentFilter">Filter by Department:</label>
+        <select id="departmentFilter">
+          <option value="All">All Departments</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Sales">Sales</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+          <option value="HR">HR</option>
+          <option value="Operations">Operations</option>
+          <option value="Logistics">Logistics</option>
+        </select>
+      </div>
 
       <h2>Employee List</h2>
       <table id="employeeTable">
