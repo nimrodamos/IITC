@@ -112,7 +112,7 @@ function deleteEmployee(id) {
     const employees = getEmployeesFromLocalStorage();
     const updatedEmployees = employees.filter((emp) => emp.id !== id);
     localStorage.setItem("employees", JSON.stringify(updatedEmployees));
-    renderEmployees(); // Display updated employees
+    renderEmployees();
   }
 }
 
@@ -179,7 +179,7 @@ function filterEmployeesByDepartment(department) {
   let filteredEmployees;
 
   if (department === "All") {
-    filteredEmployees = employees; // Show all employees if "All" is selected
+    filteredEmployees = employees;
   } else {
     filteredEmployees = employees.filter(
       (employee) => employee.department === department
@@ -192,7 +192,7 @@ function filterEmployeesByDepartment(department) {
 // Function to render filtered employees in the table
 function renderFilteredEmployees(filteredEmployees) {
   const employeeTableBody = document.querySelector("#employeeTable tbody");
-  employeeTableBody.innerHTML = ""; // Clear previous content
+  employeeTableBody.innerHTML = "";
 
   filteredEmployees.forEach((employee) => {
     const row = document.createElement("tr");
