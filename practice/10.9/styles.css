@@ -1,0 +1,75 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Container */
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  background-color: #0fe0d9;
+  padding: 20px;
+  height: 100vh; /* Makes sure the sidebar takes up the full viewport height */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main {
+  position: relative;
+  margin-left: 220px; /* Leave space for the sidebar */
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Floating Button */
+.floating-button {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.floating-button:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,39 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* nav */
+.main-nav {
+  background-color: purple;
+  display: flex;
+  justify-content: space-between; /* מרחיק את הפריטים לצדדים */
+  align-items: center; /* ממקם את הפריטים במרכז אנכית */
+  padding: 10px;
+}
+.logo {
+  background-color: aliceblue;
+  color: purple;
+}
+.home {
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.boxes-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+.box {
+  background-color: brown;
+  padding: 20px;
+}
+
+.footer {
+  background-color: blueviolet;
+}

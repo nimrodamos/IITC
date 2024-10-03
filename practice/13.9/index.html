@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content">
+      <p class="text">first</p>
+      <p class="text">second</p>
+      <p class="text">third</p>
+      <ul id="list">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+      </ul>
+      <button id="Highlight-bth">Highlight List Items</button>
+    </div>
+    <div id="new-section">
+      <ul id="new-list"></ul>
+      <button id="add-item-btn">Add Item</button>
+    </div>
+    <script>
+      // Select the content div and change its background color and text color
+      const contentDiv = document.getElementById("content");
+      contentDiv.style.backgroundColor = "blue";
+      contentDiv.style.color = "red";
+
+      // Select all <li> elements in the list
+      const listItems = document.querySelectorAll("#list li");
+      for (let i = 0; i < listItems.length; i++) {
+        console.log(listItems[i].textContent);
+      }
+      // Add event listener to the button to highlight all <li> items
+      const button = document.getElementById("Highlight-bth");
+      button.addEventListener("click", function () {
+        // Loop through each <li> item and change its background color
+        listItems.forEach(function (item) {
+          item.style.backgroundColor = "yellow";
+        });
+      });
+
+      // Function to create and append a new <li> element
+      function addNewItem() {
+        const newList = document.getElementById("new-list");
+
+        // Create a new <li> element
+        const newItem = document.createElement("li");
+        newItem.textContent = "New Item";
+
+        // Append the new <li> to the <ul>
+        newList.appendChild(newItem);
+      }
+
+      // Add event listener to the button to call addNewItem function
+      const addItemBtn = document.getElementById("add-item-btn");
+      addItemBtn.addEventListener("click", addNewItem);
+    </script>
+  </body>
+</html>
